@@ -1,0 +1,191 @@
+/*翻转动画*/
+
+.mui-content {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	margin: 0;
+}
+
+.group {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.mui-content.flip .back {
+	background: #fff url(../../special/background.png);
+	background-size: cover;
+}
+
+.mui-content .front,
+.mui-content .back {
+	background: #FFF;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	z-index: 1;
+}
+
+.mui-content .front button {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	width: 5rem;
+	letter-spacing: .2rem;
+}
+
+.mui-content .front img {
+	width: 100%;
+	height: 100%;
+}
+
+.mui-content.flip {
+	-webkit-perspective: 40rem;
+	perspective: 40rem;
+}
+
+.mui-content.flip .group {
+	-webkit-transition: -webkit-transform 1s ease;
+	transition: transform 1s ease;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.mui-content.flip .back,
+.mui-content.flip .theFlip {
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+.mui-content.flip .front,
+.mui-content.flip .back {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.mui-content.flip .front {
+	overflow: hidden;
+}
+/*翻转动画end*/
+
+@media only screen and (max-height: 500px) {
+	.mui-content.flip .back {
+		bottom: 0;
+		height: auto;
+		position: absolute;
+	}
+}
+
+.login-logo>img {
+	width: 70%;
+	position: relative;
+	left: 15%;
+	margin: 10% 0 10% 0;
+}
+
+form {
+	margin: .7rem 0;
+}
+
+form:after,
+form:before {
+	background: transparent !important;
+}
+
+.login-input-row {
+	text-align: center;
+	margin-bottom: .5rem;
+}
+
+.login-input-row label {
+	padding: .5rem .7rem !important;
+	width: 20% !important;
+}
+
+.login-input-row input {
+	width: 80% !important;
+	    display: inline-block;
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+.login-input-row label span {
+	color: #666;
+}
+
+.checkbox-group {
+	height: 2rem;
+	padding: 0 .2rem .5rem .2rem;
+	position: relative;
+}
+
+.switch-id {
+	float: right;
+	margin-top: .15rem;
+}
+
+.mui-switch {
+	width: 3.2rem;
+	height: 1.25rem;
+	border: 1px solid #ddd;
+}
+.mui-switch.mui-active {
+	background-color: #fff;
+	border-color: #ddd;
+}
+
+.mui-switch .mui-switch-handle {
+	width: 1.2rem;
+	height: 1.2rem;
+	left: 0;
+}
+
+.mui-switch.mui-active:before {
+	color: #333;
+	content: '管理';
+	left: .45rem;
+}
+
+.mui-switch:before {
+	font-size: .6rem;
+	right: .45rem;
+	content: '个人';
+	color: #333;
+	top: 1px;
+}
+
+.mui-button-row button {
+	border-radius: 0.3rem;
+	border: none;
+	display: inline-block;
+	width: 70%;
+	padding: .25rem 0 !important;
+	font-size: .9rem;
+	font-weight: 500;
+	margin: .3rem 0;
+	height: 2rem;
+}
+
+.mui-button-row a {
+	display: block;
+    text-align: right;
+    font-size: .6rem;
+    margin-right: 15%;
+    color: #333;
+    margin-top: .4rem;
+}
+
+/*表单*/
+.mui-input-group .mui-input-row:after{
+	right: 15px !important;
+}
+/*注册、忘记密码*/
+#extra {
+	display: flex;
+    justify-content: space-around;
+}
+#extra>a {
+	color: #000;
+}

@@ -1,0 +1,222 @@
+
+@font-face {font-family: "iconfont";
+  src: url('./font/iconfont.woff?t=1493366559095') format('woff'), /* chrome, firefox */
+  url('./font/iconfont.ttf?t=1493366559095') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chargebatteryvector:before { content: "\e646"; }
+
+.icon-default2:before { content: "\e63c"; }
+
+.icon-shijian:before { content: "\e63b"; }
+
+.icon-home:before { content: "\e607"; }
+
+.icon-lock:before { content: "\e608"; }
+
+.icon-pause:before { content: "\e627"; }
+
+.icon-switchover:before { content: "\e62e"; }
+
+.icon-lockfuzhi:before { content: "\e60c"; }
+
+.icon-2:before { content: "\e645"; }
+
+.icon-changjianwenti01:before { content: "\e642"; }
+
+.icon-weizhi:before { content: "\e635"; }
+
+.icon-090sun:before { content: "\e65f"; }
+
+.icon-dianyabiaoheng:before { content: "\e667"; }
+
+.icon-default:before { content: "\e63d"; }
+
+.icon-play:before { content: "\e628"; }
+
+.icon-service:before { content: "\e631"; }
+
+.icon-changjianwenti:before { content: "\e641"; }
+
+.icon-aboutus:before { content: "\e609"; }
+
+.icon-aftersalesservice:before { content: "\e60a"; }
+
+.icon-car:before { content: "\e60b"; }
+
+.icon-electronicfence:before { content: "\e60e"; }
+
+.icon-GPS-two:before { content: "\e60f"; }
+
+.icon-history:before { content: "\e610"; }
+
+.icon-homepage:before { content: "\e611"; }
+
+.icon-my:before { content: "\e612"; }
+
+.icon-realtimelocation:before { content: "\e613"; }
+
+.icon-service1:before { content: "\e614"; }
+
+.icon-signal:before { content: "\e615"; }
+
+.icon-speed:before { content: "\e616"; }
+
+.icon-thealarmrecord:before { content: "\e617"; }
+
+.icon-thedropdown:before { content: "\e618"; }
+
+.icon-usethehelp:before { content: "\e619"; }
+
+.icon-version:before { content: "\e61a"; }
+
+.icon-thequery:before { content: "\e61c"; }
+
+.icon-search0:before { content: "\e620"; }
+
+.icon-drivingstatistics:before { content: "\e61b"; }
+
+.icon-services:before { content: "\e61f"; }
+
+.icon-female:before { content: "\e61d"; }
+
+.icon-male:before { content: "\e632"; }
+
+.icon-baidu:before { content: "\e600"; }
+
+.icon-insurance:before { content: "\e601"; }
+
+.icon-mall:before { content: "\e602"; }
+
+.icon-loserepair:before { content: "\e603"; }
+
+.icon-data:before { content: "\e606"; }
+
+.icon-read:before { content: "\e61e"; }
+
+.icon-unread:before { content: "\e633"; }
+
+.icon-seach11:before { content: "\e634"; }
+
+.icon-electricity:before { content: "\e604"; }
+
+.icon-electricity-five:before { content: "\e605"; }
+
+.icon-electricity-four:before { content: "\e623"; }
+
+.icon-electricity-three:before { content: "\e624"; }
+
+.icon-electricity-two:before { content: "\e625"; }
+
+.icon-electricity-one:before { content: "\e626"; }
+
+.icon-signal-three:before { content: "\e60d"; }
+
+.icon-signal-two:before { content: "\e629"; }
+
+.icon-signal-one:before { content: "\e62a"; }
+
+.icon-signal-wu:before { content: "\e62b"; }
+
+.icon-GPS-wu:before { content: "\e62d"; }
+
+.icon-GPS:before { content: "\e62c"; }
+
+.icon-search-1:before { content: "\e62f"; }
+
+.icon-customerservice:before { content: "\e630"; }
+
+.icon-turnleft:before { content: "\e621"; }
+
+.icon-turnright:before { content: "\e622"; }
+
+.icon-Driving:before { content: "\e698"; }
+
+.icon-Alarmlog:before { content: "\e682"; }
+
+.icon-man:before { content: "\e636"; }
+
+.icon-search:before { content: "\e637"; }
+
+.icon-car1:before { content: "\e638"; }
+
+.icon-Historicaltrack:before { content: "\e685"; }
+
+.icon-Remotecontrolcar:before { content: "\e687"; }
+
+.icon-electricfence:before { content: "\e688"; }
+
+.icon-home1:before { content: "\e689"; }
+
+.icon-Find:before { content: "\e68c"; }
+
+.icon-mine:before { content: "\e68d"; }
+
+.icon-Solidcollection:before { content: "\e639"; }
+
+.icon-Collectinghollow:before { content: "\e63a"; }
+
+.icon-SOS:before { content: "\e68e"; }
+
+.icon-Settings:before { content: "\e68f"; }
+
+.icon-Disclaimer:before { content: "\e690"; }
+
+.icon-Versioncheck:before { content: "\e691"; }
+
+.icon-Mycar:before { content: "\e692"; }
+
+.icon-people:before { content: "\e693"; }
+
+.icon-Maintenancepointquery:before { content: "\e694"; }
+
+.icon-Speedingalarm:before { content: "\e695"; }
+
+.icon-mine2:before { content: "\e63f"; }
+
+.icon-find2:before { content: "\e63e"; }
+
+.icon-Batteryvoltage:before { content: "\e697"; }
+
+.icon-drivendistance:before { content: "\e699"; }
+
+.icon-temperature:before { content: "\e69a"; }
+
+.icon-engine:before { content: "\e69b"; }
+
+.icon-Instantaneousfuelconsumption:before { content: "\e69e"; }
+
+.icon-Averagefuelconsumption:before { content: "\e69d"; }
+
+.icon-Rapiddeceleration:before { content: "\e69f"; }
+
+.icon-Engineloadnounengin:before { content: "\e6a0"; }
+
+.icon-Rapidacceleration:before { content: "\e6a1"; }
+
+.icon-Throttle:before { content: "\e6a2"; }
+
+.icon-Thecurrentnumberoffaultcodes:before { content: "\e6a3"; }
+
+.icon-xieyi:before { content: "\e640"; }
+
+.icon-xialajiantou:before { content: "\e643"; }
+
+.icon-changjianwenti1:before { content: "\e644"; }
+
+.icon-Trafficcondition:before { content: "\e6bc"; }
+
+.icon-parametersettings:before { content: "\e6bd"; }
+
+.icon-Faultprompt:before { content: "\e6be"; }
+
+.icon-Lookingforacar:before { content: "\e6bf"; }
+

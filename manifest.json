@@ -1,0 +1,1231 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone"
+	],
+	"id": "com.youxuan",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "优选App",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.0.0",/*应用版本名称*/
+		"code": ""
+	},
+	"description": "车载定位监控系统",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+		"Audio": {
+			"description": "访问麦克风"
+		},
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {
+			"description": "访问摄像头"
+		},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		"Device": {
+			"description": "访问设备信息"
+		},
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+		"Invocation": {},
+		"Storage": {
+			"description": "管理应用本地数据"
+		},
+		"Uploader": {
+			"description": "管理文件上传任务"
+		},
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		"Zip": {
+			"description": "文件压缩与解压缩"
+		},
+		"Barcode": {},
+		"Maps": {
+			"description": "管理地图插件"
+		},
+		"Webview": {
+			"description": "窗口管理"
+		},
+		"NativeUI": {
+			"description": "原生UI控件"
+		},
+		"Navigator": {
+			"description": "浏览器信息"
+		},
+		"NativeObj": {
+			"description": "原生对象"
+		},
+		"Push": {},
+		"Geolocation": {},
+		"Share": {},
+		"Payment": {},
+		"Gallery": {},
+		"Bluetooth": {
+			"description": "自己实现的蓝牙插件"
+		}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": false,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": false,"delay":"0"
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "normal",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {
+				"payment": {
+					"weixin": {
+						"description": "微信支付",
+						"appid": "wx65f32210ec27aabc"
+					},
+					"alipay": {
+						"description": "阿里支付",
+						"scheme": ""
+					}
+				},
+				"share": {
+					"weixin": {
+						"appid": "wx65f32210ec27aabc",
+						"appsecret": "e98451c4813a38f1b75382b36ce79141",
+						"description": "可选，微信分享"
+					},
+					"qq": {
+						"appid": "1105917072",
+						"description": "QQ分享"
+					}
+				},
+				"push": {
+					"igexin": {
+						"appid": "ZezivElm6R7qbDvvxixvN4",
+						"appkey": "1keF7a42gX8AFNd9tmEJFA",
+						"appsecret": "AULEdO2tjE6dGEJUlFa7k1"
+					}
+				},
+				"maps": {
+					"baidu": {
+						"appkey_ios": "gkuPXsq1Ml8wY32EMG79evPI",
+						"appkey_android": "vGaGOlMe08FBvT0uIhR94O9tl8zBd7mi",
+						"appkey": "",
+						"description": ""
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": [],
+				"UIReserveStatusbarOffset": false,//开启沉浸式状态栏
+				"plistcmds": [
+					"Add :NSAppTransportSecurity:NSAllowsArbitraryLoads bool true"
+				]
+			},
+			"google": {
+				"packagename": "com.birdsh.cheways",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"ImmersedStatusbar": true,//开启沉浸式状态栏
+				"permissions": [
+					"<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+					"<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+					"<uses-permission android:name=\"android.permission.GET_TASKS\"/>",
+					"<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+					"<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+					"<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+					"<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+					"<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+					"<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+					"<uses-feature android:name=\"android.hardware.camera\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>",
+					"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+					"<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+					"<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+					"<uses-permission android:name=\"android.permission.CAMERA\"/>"
+				],
+				"hardwareAccelerated": true
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png",
+					"xxxhdpi":"unpackage/res/icons/192x192.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"retina40": "unpackage/src/启动页.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "unpackage/src/启动页.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "unpackage/src/启动页.png"
+					},
+					"ipad": {
+						/*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": ""
+					}
+				},
+				"android": {
+					"hdpi": "D:/vue/fans-master/unpackage/res/icons/start 768x1024.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "D:/vue/fans-master/unpackage/res/icons/start 768x1024.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "D:/vue/fans-master/unpackage/res/icons/start 768x1024.png"
+				}
+			},
+			"debug": true
+		}
+	},
+	"fullscreen": false,
+	"unpackage": [
+		"src"
+	],
+	"dependencies": {
+		"pages": {
+			"modules/service/service.html": {
+				"resources": [
+					"modules/service/service.js",
+					"modules/service/service.css",
+					"lib/mui.ttf",
+					"common/font/iconfont.woff",
+					"lib/raven.min.js",
+					"lib/mui.css",
+					"common/icon.css",
+					"common/common.css"
+				],
+				"refer": [
+					"modules/repair-point/repair-point.html"
+				],
+				"priority": 0
+			},
+			"index.html": {
+				"resources": [
+					"lib/vue.js",
+					"common/common.js",
+					"lib/error.js",
+					"lib/mui.css",
+					"special/special.js",
+					"lib/raven.min.js",
+					"lib/mui.js"
+				],
+				"refer": [
+					"modules/browser/browser.html",
+					"modules/main/main.html",
+					"modules/login/login.html",
+					"build/main/main.html",
+					"build/browser/browser.html"
+				],
+				"priority": 0
+			},
+			"modules/status/status.html": {
+				"resources": [
+					"common/icon.css",
+					"modules/status/status.js",
+					"lib/mui.css",
+					"modules/status/status.css",
+					"common/common.css",
+					"common/font/iconfont.woff",
+					"lib/mui.js",
+					"lib/vue.js",
+					"common/common.js"
+				],
+				"refer": [
+					"modules/status/breakdown.html",
+					"modules/status/parameter.html"
+				],
+				"priority": 0
+			},
+			"modules/mine/mine.html": {
+				"resources": [
+					"lib/PhotoClip/lrz.all.bundle.js",
+					"lib/PhotoClip/PhotoClip.js",
+					"modules/mine/userimg.png",
+					"lib/coordtransform.js",
+					"modules/mine/back.png",
+					"modules/mine/mine.js",
+					"lib/PhotoClip/hammer.js",
+					"lib/FontAwesome.otf",
+					"lib/PhotoClip/iscroll-zoom.js",
+					"modules/mine/mine.css",
+					"lib/font-awesome.min.css",
+					"lib/mui.ttf",
+					"common/common.js",
+					"common/font/iconfont.woff",
+					"lib/mui.css",
+					"lib/vue.js",
+					"lib/PhotoClip/jquery-3.1.0.min.js",
+					"common/icon.css",
+					"lib/raven.min.js",
+					"common/common.css",
+					"lib/mui.js"
+				],
+				"refer": [
+					"modules/mine/user-info.html",
+					"special/about.html",
+					"modules/mine/setting.html",
+					"special/user-agreement.html",
+					"modules/my-cars/my-cars.html"
+				],
+				"priority": 0
+			},
+			"modules/home/home.html": {
+				"resources": [
+					"modules/home/main-logo.png",
+					"modules/home/icons/add.svg",
+					"modules/home/icons/undefence.svg",
+					"lib/mui.css",
+					"modules/home/icons/location.svg",
+					"lib/font-awesome.min.css",
+					"modules/home/home.css",
+					"modules/home/icons/unswitch.svg",
+					"lib/PhotoClip/jquery-3.1.0.min.js",
+					"modules/home/icons/switch.svg",
+					"common/icon.css",
+					"modules/home/icons/fencing.svg",
+					"modules/home/icons/trail.svg",
+					"modules/home/icons/alert_list.svg",
+					"modules/home/icons/personalize.svg",
+					"modules/home/icons/control.svg",
+					"modules/home/pan_animate.png",
+					"common/common.css",
+					"modules/home/icons/unlock.svg",
+					"modules/home/home.js",
+					"modules/home/icons/defence.svg",
+					"modules/home/icons/lock.svg",
+					"common/common.js",
+					"common/font/iconfont.woff",
+					"special/main.png",
+					"lib/vue.js",
+					"lib/mui.js",
+					"special/text.png",
+					"modules/home/icons/vc_sys_vcu.png",
+					"modules/home/icons/vc_sys_power_supply.png",
+					"modules/home/icons/vc_sys_power_war.png",
+					"modules/home/icons/vc_sys_power_supply_war.png",
+					"modules/home/icons/vc_sys_power.png",
+					"modules/home/icons/vc_sys_vcu_war.png",
+					"lib/FontAwesome.otf",
+					"lib/mui.ttf"
+				],
+				"refer": [
+					"modules/location_baidu/location.html",
+					"modules/individuation/individuation.html",
+					"modules/battery/battery.html",
+					"modules/bluetooth/bluetooth.html",
+					"modules/control-car/conreol-car.html"
+				],
+				"priority": 0
+			},
+			"modules/browser/browser.html": {
+				"resources": [
+					"lib/mui.css",
+					"lib/mui.ttf",
+					"modules/browser/browser.js",
+					"lib/mui.js"
+				],
+				"refer": [
+					"modules/login/login.html"
+				],
+				"priority": 0
+			},
+			"modules/main/main.html": {
+				"resources": [
+					"modules/main/main.js",
+					"common/icon.css",
+					"common/font/iconfont.woff",
+					"modules/main/main.css",
+					"modules/home/home.html",
+					"common/common.css",
+					"lib/mui.css",
+					"lib/raven.min.js",
+					"lib/mui.js",
+					"lib/vue.js",
+					"common/common.js",
+					"lib/mui.ttf",
+					"modules/status/status.html"
+				],
+				"refer": [
+					"modules/service/service.html",
+					"modules/mine/mine.html"
+				],
+				"priority": 0
+			},
+			"modules/location_baidu/location.html": {
+				"resources": [
+					"modules/location_baidu/location.js",
+					"special/map_logo.png",
+					"lib/mui.picker.all.js",
+					"modules/location_baidu/location.css",
+					"lib/mui.picker.all.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/repair-point/repair-point.html": {
+				"resources": [
+					"modules/repair-point/repair-point.css",
+					"modules/repair-point/repair-point.js",
+					"lib/mui.ttf",
+					"common/icon.css",
+					"lib/mui.css",
+					"modules/mine/userimg.png",
+					"common/common.css",
+					"lib/mui.js",
+					"lib/vue.js",
+					"common/common.js",
+					"common/font/iconfont.woff"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/login/login.html": {
+				"resources": [
+					"special/adv.jpg",
+					"special/background.png",
+					"special/login.png",
+					"modules/login/login.js",
+					"modules/login/login.css",
+					"lib/vue.js",
+					"common/common.js",
+					"lib/mui.css",
+					"lib/raven.min.js",
+					"common/common.css",
+					"lib/mui.ttf",
+					"lib/mui.js"
+				],
+				"refer": [
+					"modules/register/register.html",
+					"modules/main/main.html"
+				],
+				"priority": 0
+			},
+			"modules/register/register.html": {
+				"resources": [
+					"modules/register/register.js",
+					"modules/register/register.css",
+					"lib/vue.js",
+					"common/icon.css",
+					"common/common.js",
+					"lib/mui.css",
+					"common/common.css",
+					"lib/mui.ttf",
+					"lib/mui.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/mine/user-info.html": {
+				"resources": [
+					"lib/mui.picker.all.js",
+					"modules/mine/user-info.css",
+					"modules/mine/user-info.js",
+					"lib/mui.picker.all.css",
+					"lib/mui.css"
+				],
+				"refer": [
+					"modules/mine/modify_pwd.html"
+				],
+				"priority": 0
+			},
+			"modules/mine/modify_pwd.html": {
+				"resources": [
+					"modules/mine/modify_pwd.css",
+					"modules/mine/modify_pwd.js",
+					"lib/PhotoClip/lrz.all.bundle.js",
+					"common/common.js",
+					"lib/mui.picker.all.js",
+					"lib/mui.css",
+					"lib/PhotoClip/PhotoClip.js",
+					"lib/vue.js",
+					"lib/PhotoClip/jquery-3.1.0.min.js",
+					"common/icon.css",
+					"common/common.css",
+					"lib/PhotoClip/hammer.js",
+					"lib/PhotoClip/iscroll-zoom.js",
+					"lib/mui.picker.all.css",
+					"lib/mui.ttf",
+					"lib/mui.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"special/about.html": {
+				"resources": [
+					"special/logo_about.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/mine/setting.html": {
+				"resources": [
+					"modules/mine/setting.js",
+					"modules/mine/setting.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/my-cars/my-cars.html": {
+				"resources": [
+					"modules/my-cars/my-cars.css",
+					"modules/my-cars/my-cars.js",
+					"lib/vue.js",
+					"common/icon.css",
+					"common/common.js",
+					"common/font/iconfont.woff",
+					"lib/mui.css",
+					"common/common.css",
+					"lib/mui.ttf",
+					"lib/mui.js"
+				],
+				"refer": [
+					"modules/my-cars/edit-car.html"
+				],
+				"priority": 0
+			},
+			"modules/my-cars/edit-car.html": {
+				"resources": [
+					"lib/PhotoClip3/PhotoClip.min.js",
+					"modules/my-cars/edit-car.css",
+					"lib/PhotoClip3/iscroll-zoom.js",
+					"lib/PhotoClip3/hammer.min.js",
+					"lib/PhotoClip3/lrz.all.bundle.js",
+					"modules/my-cars/edit-car.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/status/breakdown.html": {
+				"resources": [
+					"modules/status/icons/vc_burglar_alarm.png",
+					"modules/status/icons/vc_cushion_lock.png",
+					"lib/mui.css",
+					"modules/status/icons/vc_brake_crank.png",
+					"modules/status/icons/vc_signal_left.png",
+					"modules/status/icons/vc_brake_light.png",
+					"modules/status/icons/vc_signal_right.png",
+					"modules/status/breakdown.js",
+					"modules/status/icons/vc_hall.png",
+					"modules/status/icons/vc_electrical_machine.png",
+					"modules/status/icons/vc_tab_the_lock.png",
+					"modules/status/icons/vc_dipped_beam.png",
+					"modules/status/icons/vc_start_button.png",
+					"modules/status/icons/vc_duzhuan.png",
+					"modules/status/icons/vc_controller.png",
+					"modules/status/icons/vc_horn.png",
+					"modules/status/icons/vc_high_beam.png",
+					"modules/status/breakdown.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/individuation/individuation.html": {
+				"resources": [
+					"modules/individuation/colorwheel.js",
+					"modules/individuation/bower_components/tinycolor/tinycolor.js",
+					"modules/individuation/individuation.js",
+					"modules/individuation/element.css",
+					"modules/individuation/colorwheel.theme.js",
+					"modules/individuation/bower_components/d3/d3.min.js",
+					"modules/individuation/individuation.css",
+					"common/common.js",
+					"common/font/iconfont.woff",
+					"lib/mui.css",
+					"lib/vue.js",
+					"lib/PhotoClip/jquery-3.1.0.min.js",
+					"common/icon.css",
+					"common/common.css",
+					"lib/mui.ttf",
+					"lib/mui.js",
+					"modules/individuation/wheel.png"
+				],
+				"refer": [
+					"modules/individuation/individuation-more.html"
+				],
+				"priority": 0
+			},
+			"modules/individuation/individuation-more.html": {
+				"resources": [
+					"modules/individuation/individuation-more.js",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/battery/battery.html": {
+				"resources": [
+					"modules/battery/battery.js",
+					"modules/battery/img/battery_wendu.png",
+					"modules/battery/img/battery_0.png",
+					"modules/battery/img/battery_jkzk.png",
+					"modules/battery/battery.css",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/bluetooth/bluetooth.html": {
+				"resources": [
+					"modules/bluetooth/bluetooth.js",
+					"lib/mui.ttf",
+					"modules/bluetooth/bluetooth.css",
+					"modules/bluetooth/element.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/status/parameter.html": {
+				"resources": [
+					"modules/status/parameter.js",
+					"modules/status/parameter.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/control-car/conreol-car.html": {
+				"resources": [
+					"modules/control-car/conreol-car.js",
+					"lib/mui.css",
+					"modules/control-car/conreol-car.css",
+					"common/icon.css",
+					"common/common.css",
+					"lib/vue.js",
+					"common/common.js",
+					"lib/mui.ttf",
+					"lib/mui.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/status/status.html": {
+				"resources": [
+					"build/status/status.css",
+					"build/status/status.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/service/service.html": {
+				"resources": [
+					"build/service/service.js",
+					"build/service/service.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/mine/mine.html": {
+				"resources": [
+					"lib/PhotoClip/lrz.all.bundle.js",
+					"build/mine/mine.js",
+					"build/mine/mine.css",
+					"build/mine/userimg.png",
+					"lib/PhotoClip/PhotoClip.js",
+					"lib/coordtransform.js",
+					"build/mine/back.png",
+					"lib/PhotoClip/hammer.js",
+					"lib/PhotoClip/iscroll-zoom.js",
+					"lib/mui.css",
+					"lib/icon.css",
+					"lib/css/iconfont.css",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/home/home.html": {
+				"resources": [
+					"build/home/icons/alert_list.svg",
+					"build/home/icons/add.svg",
+					"build/home/icons/defence.svg",
+					"build/home/icons/fencing.svg",
+					"build/home/icons/trail.svg",
+					"special/main.png",
+					"build/home/icons/undefence.svg",
+					"build/home/icons/location.svg",
+					"lib/FontAwesome.otf",
+					"special/text.png",
+					"lib/font-awesome.min.css",
+					"build/home/icons/unlock.svg",
+					"build/home/home.css",
+					"build/home/icons/vc_sys_power_war.png",
+					"lib/PhotoClip/jquery-3.1.0.min.js",
+					"build/home/icons/vc_sys_vcu.png",
+					"build/home/icons/unswitch.svg",
+					"build/home/home.js",
+					"build/home/icons/switch.svg",
+					"build/home/icons/lock.svg",
+					"build/home/icons/personalize.svg",
+					"build/home/icons/vc_sys_power_supply.png",
+					"build/home/icons/control.svg",
+					"images/muwu.jpg",
+					"images/yuantiao.jpg",
+					"lib/mui.pullToRefresh.js",
+					"lib/mui.css",
+					"lib/mui.pullToRefresh.material.js",
+					"lib/css/iconfont.css",
+					"images/shuijiao.jpg",
+					"images/cbd.jpg",
+					"images/ad3.jpg",
+					"images/ad2.jpg",
+					"images/ad4.jpg",
+					"images/timg.png",
+					"images/ad1.jpg",
+					"lib/mui.ttf"
+				],
+				"refer": [
+					"build/location_baidu/location.html"
+				],
+				"priority": 0
+			},
+			"build/main/main.html": {
+				"resources": [
+					"build/common/common.js",
+					"lib/font/iconfont.woff",
+					"lib/vue.js",
+					"build/main/main.js",
+					"lib/icon.css",
+					"build/common/common.css",
+					"build/home/home.html",
+					"build/main/main.css"
+				],
+				"refer": [
+					"build/status/status.html",
+					"build/service/service.html",
+					"build/mine/mine.html",
+					"build/findCard/findCard.html",
+					"build/pinkAge/pinkAge.html"
+				],
+				"priority": 0
+			},
+			"build/browser/browser.html": {
+				"resources": [
+					"build/browser/browser.js",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/location_baidu/location.html": {
+				"resources": [
+					"build/location_baidu/location.js",
+					"lib/mui.picker.all.js",
+					"build/location_baidu/location.css",
+					"lib/mui.picker.all.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/findCard/findCard.html": {
+				"resources": [
+					"lib/mui.css",
+					"lib/icon.css",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"build/pinkAge/pinkAge.html": {
+				"resources": [
+					"lib/mui.css",
+					"lib/icon.css",
+					"lib/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"src/service/img/poi_food.png",
+				"src/head.pug",
+				"src/driving-statistics/wechat-circle.png",
+				"modules/mine/mobile_phone_binding.js",
+				"package.json",
+				"src/control-car/conreol-car.html",
+				"src/birdpay/bc.png",
+				"src/trail_baidu/trail.js",
+				"src/status/icons/vc_start_button.png",
+				"src/mine/user-info.js",
+				"modules/alert-map-baidu/alert-map-baidu.css",
+				"modules/status/icons/vc_horn_war.png",
+				"modules/birdpay/bc.png",
+				"modules/alert-list-plus/alert-list-plus.js",
+				"src/mine/carMessage.js",
+				"src/status/icons/vc_brake_crank_war.png",
+				"modules/fencing_baidu/fencing.js",
+				"modules/status/icons/vc_tab_the_lock_war.png",
+				"src/status/icons/vc_device_error.png",
+				"src/mine/mine.js",
+				"src/mine/freAskedQue.js",
+				"src/find-password/step3.css",
+				"modules/driving-statistics/driving-statistics.html",
+				"modules/repair-point/point.jpg",
+				"src/mine/modify_pwd.css",
+				"modules/find-password/step1.css",
+				"modules/device-list/device-list2.html",
+				"src/status/icons/vc_horn_war.png",
+				"src/home/icons/unlock.svg",
+				"modules/activate/activate.html",
+				"modules/fencing-popover/fencing-popover.css",
+				"modules/service/img/poi_ktv.png",
+				"modules/service/img/lazyload.gif",
+				"modules/device-list/device-list.js",
+				"modules/fencing-input/fencing-input.html",
+				"src/status/icons/vc_gps.png",
+				"src/location_baidu/location-45.png",
+				"modules/find-password/step3.js",
+				"src/individuation/individuation.css",
+				"modules/alert-list/alert-list.html",
+				"modules/status/icons/vc_high_beam_war.png",
+				"src/status/breakdown.pug",
+				"modules/status/icons/vc_brake_crank_war.png",
+				"src/home/home.js",
+				"src/service/img/poi_movie.png",
+				"src/service/service.html",
+				"modules/trail-map/trail-map.css",
+				"modules/trail_baidu/trail.js",
+				"src/mine/mobile_phone_binding.css",
+				"modules/birdpay/pay-success.html",
+				"modules/service/param-query.js",
+				"src/mine/feedback.js",
+				"src/status/icons/vc_fangfeiche_war.png",
+				"modules/repair-point/my-collection.js",
+				"src/status/icons/vc_handle.png",
+				"src/home/home.css",
+				"modules/insurance/insurance.js",
+				"src/birdpay/select-package.html",
+				"modules/after-sale-service/after-sale-service.js",
+				"modules/location-plug/location-plug.css",
+				"modules/location-plug/location-plug.html",
+				"src/mine/update.json",
+				"src/home/icons/add.svg",
+				"modules/mine/freAskedQue.html",
+				"modules/repair-detail/repair-detail.css",
+				"src/mine/modify_pwd.js",
+				"modules/alert-list-plus/alert-list-plus.html",
+				"src/service/img/poi_atm.png",
+				"src/service/service-sub.html",
+				"src/status/icons/vc_signal_left_war.png",
+				"src/service/img/poi_market.png",
+				"src/find-password/step1.js",
+				"modules/mine/findPassword.css",
+				"src/mine/mobile_phone_binding.js",
+				"src/service/img/poi_ktv.png",
+				"src/alert-map-baidu/alert-map-baidu.css",
+				"src/insurance/insurance.css",
+				"modules/alert-list/line.png",
+				"lib/PhotoClip/PhotoClip.min.js",
+				"src/location_baidu/location-swz.png",
+				"modules/location-plug/location-plug.js",
+				"modules/find-password/step1.html",
+				"src/insurance/insurance.js",
+				"src/insurance/insurance-detail.html",
+				"modules/trail_baidu/warn.png",
+				"modules/mine/findPassword.js",
+				"src/status/icons/vc_duzhuan_war.png",
+				"src/mine/trades.html",
+				"src/trail_baidu/trail.html",
+				"src/register/register.css",
+				"modules/status/icons/vc_fangfeiche.png",
+				"src/driving-statistics/fenxiang.js",
+				"src/my-car/my-car.css",
+				"src/my-car/alert.gif",
+				"src/status/icons/vc_overvoltage_war.png",
+				"src/login/login.html",
+				"src/trail_baidu/location-swz.png",
+				"src/after-sale-service/after-sale-service.css",
+				"src/service/param-query.html",
+				"modules/status/icons/vc_hall_war.png",
+				"src/mine/findPassword.css",
+				"src/birdpay/pay-success.js",
+				"src/service/service.css",
+				"modules/driving-statistics/wechat.png",
+				"modules/birdpay/pay-method.css",
+				"src/after-sale-service/after-sale-service.js",
+				"modules/status/icons/vc_dipped_beam_war.png",
+				"src/driving-statistics/jweixin-1.0.0.js",
+				"modules/status/icons/vc_fangfeiche_war.png",
+				"src/location_baidu/location.css",
+				"modules/device-list/device-list.html",
+				"modules/trail_baidu/location-swz.png",
+				"modules/device-list/device-list.css",
+				"src/main/main.html",
+				"modules/status/icons/vc_guoliu_war.png",
+				"src/activate/activate.pug",
+				"src/driving-statistics/driving-statistics.html",
+				"src/mine/carMessage.css",
+				"modules/home/pan.png",
+				"src/fencing-popover/fencing-popover.js",
+				"src/bluetooth/bluetooth.pug",
+				"modules/after-sale-service/after-sale-service.html",
+				"modules/service/img/poi_buy.png",
+				"src/status/icons/vc_brake_light_war.png",
+				"modules/mine/freAskedQue.js",
+				"src/my-cars/my-cars.pug",
+				"src/my-car/my-car.html",
+				"src/my-car/real_dialview.png",
+				"src/mine/back.png",
+				"src/alert-list/alert-list-sub.css",
+				"modules/alert-list/alert-list.js",
+				"modules/my-car/real_bigbmp.png",
+				"src/register/register.pug",
+				"src/status/icons/vc_handle_war.png",
+				"src/driving-statistics/driving-statistics.css",
+				"src/home/icons/defence.svg",
+				"src/mine/user-info.css",
+				"src/status/icons/vc_signal_right_war.png",
+				"src/mine/carMessage.html",
+				"src/status/icons/vc_bluetooth.png",
+				"src/insurance/insurance.html",
+				"src/control-car/conreol-car.js",
+				"src/my-cars/edit-car.pug",
+				"src/status/parameter.css",
+				"src/status/icons/vc_guoliu.png",
+				"src/repair-point/my-collection.html",
+				"modules/birdpay/weixin.png",
+				"src/service/service.js",
+				"src/alert-list-plus/alert-list-plus.js",
+				"src/location-plug/location-plug.js",
+				"src/trail_baidu/end.png",
+				"modules/birdpay/pay-success.css",
+				"src/alert-map-baidu/alert-map-baidu.js",
+				"modules/repair-detail/repair-detail.js",
+				"src/home/icons/personalize.svg",
+				"modules/service/param-query.html",
+				"modules/birdpay/select-package.css",
+				"src/mine/trades.js",
+				"modules/birdpay/alipay.png",
+				"modules/fencing-popover/fencing-popover.html",
+				"src/my-cars/my-cars.css",
+				"src/activate/activate.js",
+				"modules/driving-statistics/driving-statistics.js",
+				"src/home/icons/lock.svg",
+				"src/device-list/device-list.css",
+				"src/fencing-popover/fencing-popover.html",
+				"src/device-list/device-list2.html",
+				"modules/fencing_baidu/fencing.css",
+				"modules/trail_baidu/star.png",
+				"modules/status/icons/vc_device_error.png",
+				"modules/mine/carMessage.css",
+				"src/home/icons/location.svg",
+				"src/individuation/element.css",
+				"modules/location_baidu/point_user.png",
+				"src/alert-list/alert-list.html",
+				"modules/login/background.png",
+				"modules/location_baidu/location.png",
+				"src/mine/setting.css",
+				"src/status/icons/vc_brake_light.png",
+				"modules/birdpay/select-package.js",
+				"src/feedback/feedback.html",
+				"src/status/icons/vc_tab_the_lock.png",
+				"src/repair-point/repair-point.html",
+				"special/readme.txt",
+				"modules/alert-list/alert-list.css",
+				"src/control-car/conreol-car.css",
+				"src/main/main.js",
+				"modules/fencing-popover/fencing-popover.js",
+				"lib/echarts.min.js",
+				"src/status/status.pug",
+				"src/birdpay/select-package.css",
+				"modules/location_baidu/location-swz.png",
+				"src/status/icons/vc_hall_war.png",
+				"modules/fencing-input/fencing-input.js",
+				"modules/alert-list/alert-list-sub.js",
+				"src/mine/userimg.png",
+				"src/location-plug/location-plug.html",
+				"src/repair-point/repair-point.js",
+				"src/status/icons/vc_high_beam.png",
+				"src/home/main-logo.png",
+				"modules/alert-list/alert-list-sub.css",
+				"src/status/icons/vc_overvoltage.png",
+				"src/repair-detail/repair-detail.css",
+				"src/alert-list-plus/alert-list-plus.css",
+				"modules/alert-list/alert-list-sub.html",
+				"modules/find-password/step1.js",
+				"yarn.lock",
+				"src/browser/browser.html",
+				"modules/trail-map/trail-map.js",
+				"src/fencing-input/fencing-input.css",
+				"src/bluetooth/bluetooth.js",
+				"src/status/breakdown.css",
+				"src/status/icons/vc_electrical_machine.png",
+				"src/my-cars/edit-car.js",
+				"modules/alert-list-plus/alert-list-plus.css",
+				"modules/mine/trades.js",
+				"modules/status/icons/vc_signal_right_war.png",
+				"modules/my-car/alert.gif",
+				"src/home/icons/switch.svg",
+				"modules/my-car/real_dialview.png",
+				"src/status/icons/vc_dipped_beam.png",
+				"modules/service/img/poi_movie.png",
+				"src/mine/mobile_phone_binding.html",
+				"src/my-car/real_bigbmp.png",
+				"src/mine/findPassword.html",
+				"modules/service/img/poi_market.png",
+				"modules/service/img/poi_hotel.png",
+				"modules/status/icons/vc_electrical_machine_war.png",
+				"modules/mine/carMessage.js",
+				"gulpfile.js",
+				"src/status/icons/vc_cushion_lock_war.png",
+				"src/mine/setting.js",
+				"modules/repair-detail/location-45.png",
+				"modules/status/icons/vc_controller_war.png",
+				"modules/activate/activate.css",
+				"src/trail_baidu/trail.css",
+				"modules/mine/mobile_phone_binding.css",
+				"modules/trail_baidu/location-45.png",
+				"modules/after-sale-service/after-sale-service.css",
+				"modules/status/icons/vc_handle_war.png",
+				"src/trail_baidu/line.png",
+				"modules/status/icons/vc_bluetooth_war.png",
+				"src/status/parameter.js",
+				"src/device-list/device-list.js",
+				"src/my-cars/edit-car.css",
+				"modules/birdpay/pay-method.js",
+				"modules/birdpay/pay-success.js",
+				"modules/insurance/insurance.css",
+				"src/birdpay/pay-success.css",
+				"modules/service/img/poi_atm.png",
+				"src/status/icons/vc_burglar_alarm_war.png",
+				"src/alert-map-baidu/alert-map-baidu.html",
+				"src/status/breakdown.js",
+				"src/alert-list/alert-list-sub.html",
+				"src/location_baidu/point_user.png",
+				"src/status/icons/vc_signal_right.png",
+				"modules/driving-statistics/wechat-circle.png",
+				"src/status/icons/vc_start_button_war.png",
+				"src/status/icons/vc_bluetooth_war.png",
+				"modules/fencing-input/fencing-input.css",
+				"src/trail_baidu/star.png",
+				"src/alert-list/alert-list-sub.js",
+				"src/status/status.css",
+				"modules/fencing_baidu/fencing.html",
+				"modules/mine/carMessage.html",
+				"src/alert-list/line.png",
+				"modules/repair-point/my-collection.html",
+				"src/status/status.js",
+				"modules/mine/mobile_phone_binding.html",
+				"src/trail-map/trail-map.js",
+				"src/fencing-popover/fencing-popover.css",
+				"src/status/icons/vc_signal_left.png",
+				"src/birdpay/pay-method.css",
+				"src/device-list/device-list.html",
+				"src/find-password/step2.js",
+				"src/individuation/individuation.js",
+				"src/home/icons/alert_list.svg",
+				"src/fencing-input/fencing-input.js",
+				"modules/trail_baidu/end.png",
+				"src/my-cars/my-cars.js",
+				"modules/activate/activate.js",
+				"src/login/checkbox.png",
+				"modules/trail-map/trail-map.html",
+				"src/after-sale-service/after-sale-service.html",
+				"modules/login/checkbox.png",
+				"src/repair-point/my-collection.js",
+				"modules/alert-map-baidu/alert-map-baidu.html",
+				"src/mine/mine.html",
+				"src/find-password/step2.html",
+				"src/main/main.css",
+				"modules/mine/freAskedQue.css",
+				"src/service/param-query.js",
+				"modules/trail_baidu/line.png",
+				"modules/my-car/my-car.css",
+				"src/find-password/step2.css",
+				"modules/head.html",
+				"modules/mine/feedback.js",
+				"src/home/icons/undefence.svg",
+				"src/service/img/poi_hotel.png",
+				"modules/status/icons/vc_bluetooth.png",
+				"modules/trail_baidu/trail.css",
+				"src/repair-detail/repair-detail.js",
+				"src/status/parameter.pug",
+				"src/status/icons/vc_burglar_alarm.png",
+				"src/birdpay/pay-method.js",
+				"modules/insurance/insurance.html",
+				"src/browser/browser.js",
+				"modules/status/icons/vc_brake_light_war.png",
+				"src/status/icons/vc_duzhuan.png",
+				"src/mine/findPassword.js",
+				"modules/trail_baidu/trail.html",
+				"modules/status/icons/vc_burglar_alarm_war.png",
+				"modules/birdpay/select-package.html",
+				"src/find-password/step1.css",
+				"src/fencing_baidu/fencing.html",
+				"src/status/icons/vc_dipped_beam_war.png",
+				"src/birdpay/select-package.js",
+				"src/status/icons/vc_hall.png",
+				"src/driving-statistics/qqkj.png",
+				"modules/status/icons/vc_overvoltage.png",
+				"src/birdpay/alipay.png",
+				"src/status/icons/vc_fangfeiche.png",
+				"src/mine/setting.html",
+				"modules/status/icons/vc_guoliu.png",
+				"src/trail_baidu/warn.png",
+				"src/trail-map/trail-map.html",
+				"src/my-car/my-car.js",
+				"modules/driving-statistics/fenxiang.js",
+				"src/service/img/poi_buy.png",
+				"src/status/icons/vc_controller.png",
+				"modules/birdpay/pay-method.html",
+				"modules/service/service-sub.html",
+				"src/home/home.pug",
+				"src/mine/feedback.css",
+				"src/home/icons/unswitch.svg",
+				"src/birdpay/weixin.png",
+				"modules/repair-detail/repair-detail.html",
+				"modules/driving-statistics/qq.png",
+				"src/status/icons/vc_guoliu_war.png",
+				"src/status/icons/vc_cushion_lock.png",
+				"src/mine/modify_pwd.html",
+				"modules/feedback/feedback.html",
+				"src/fencing_baidu/fencing.css",
+				"src/birdpay/ele-contract.html",
+				"src/location_baidu/location.png",
+				"src/service/img/poi_car.png",
+				"modules/mine/feedback.html",
+				"modules/mine/trades.html",
+				"src/activate/activate.css",
+				"modules/alert-map-baidu/alert-map-baidu.js",
+				"src/driving-statistics/driving-statistics.js",
+				"src/mine/feedback.html",
+				"src/driving-statistics/wechat.png",
+				"src/fencing-input/fencing-input.html",
+				"src/find-password/step3.html",
+				"modules/driving-statistics/jweixin-1.0.0.js",
+				"src/birdpay/pay-success.html",
+				"src/fencing_baidu/fencing.js",
+				"src/status/icons/vc_high_beam_war.png",
+				"src/home/icons/trail.svg",
+				"modules/location_baidu/location-45.png",
+				"modules/status/icons/vc_gps_war.png",
+				"src/mine/freAskedQue.css",
+				"modules/find-password/step2.js",
+				"modules/birdpay/ele-contract.html",
+				"src/repair-detail/location-45.png",
+				"src/status/icons/vc_electrical_machine_war.png",
+				"src/status/icons/vc_brake_crank.png",
+				"modules/mine/findPassword.html",
+				"src/login/login.js",
+				"src/login/login.css",
+				"modules/find-password/step3.css",
+				"src/individuation/individuation.html",
+				"src/home/icons/control.svg",
+				"modules/driving-statistics/qqkj.png",
+				"src/repair-detail/repair-detail.html",
+				"src/status/icons/vc_controller_war.png",
+				"src/alert-list/alert-list.css",
+				"src/trail-map/trail-map.css",
+				"modules/insurance/insurance-detail.html",
+				"src/mine/user-info.html",
+				"src/bluetooth/bluetooth.css",
+				"src/status/icons/vc_horn.png",
+				"modules/service/img/poi_food.png",
+				"modules/find-password/step2.css",
+				"modules/my-car/my-car.js",
+				"modules/status/icons/vc_overvoltage_war.png",
+				"modules/mine/feedback.css",
+				"src/alert-list-plus/alert-list-plus.html",
+				"src/find-password/step1.html",
+				"src/mine/mine.css",
+				"src/find-password/step3.js",
+				"src/driving-statistics/qq.png",
+				"src/location-plug/location-plug.css",
+				"modules/service/img/poi_busstation.png",
+				"src/repair-point/point.jpg",
+				"src/status/icons/vc_gps_war.png",
+				"src/status/icons/vc_tab_the_lock_war.png",
+				"src/register/register.js",
+				"modules/status/icons/vc_cushion_lock_war.png",
+				"modules/status/icons/vc_handle.png",
+				"modules/driving-statistics/driving-statistics.css",
+				"modules/insurance/insurance-detail.js",
+				"src/service/img/poi_busstation.png",
+				"src/home/icons/fencing.svg",
+				"modules/service/img/poi_car.png",
+				"src/location_baidu/location.html",
+				"common/font/iconfont.ttf",
+				"src/mine/freAskedQue.html",
+				"modules/status/icons/vc_gps.png",
+				"src/location_baidu/location.js",
+				"src/insurance/insurance-detail.js",
+				"modules/status/icons/vc_signal_left_war.png",
+				"src/repair-point/repair-point.css",
+				"modules/status/icons/vc_start_button_war.png",
+				"modules/my-car/my-car.html",
+				"src/trail_baidu/location-45.png",
+				"src/service/img/lazyload.gif",
+				"modules/find-password/step3.html",
+				"src/birdpay/pay-method.html",
+				"modules/find-password/step2.html",
+				"modules/status/icons/vc_duzhuan_war.png",
+				"src/alert-list/alert-list.js"
+			]
+		}
+	}
+}

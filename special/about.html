@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="telephone=no,email=no" name="format-detection">
+		<title>关于我们</title>
+		<link rel="stylesheet" href="../lib/mui.css" />
+		<link rel="stylesheet" href="../build/common/common.css" />
+		<link rel="stylesheet" href="../lib/icon.css"/>
+		<style>
+			html, body, .mui-content {
+				background-color: #fff;
+				height: 100%;
+				color: #5d7e99;
+			}
+			.mui-content {
+				background: #fff !important;
+			}
+			
+			.grayness {
+				height: .5rem;
+				width: 100%;
+				background: #f1f1f1;
+			}
+			
+			#logo {
+				margin: 2rem 0 1.5rem 0;
+			}
+			
+			#logo img {
+				width: 50%;
+				display: block;
+				margin: 2.5rem auto;
+			}
+			
+			.writing {
+				padding: 0 1rem;
+				font-size: .7rem;
+				color: #5d7e99;
+				margin-top: 1rem;
+				text-indent: 1.4rem;
+			}
+			
+			.mui-table-view-cell {
+				font-size: .6rem !important;
+				padding: .2rem .75rem !important;
+			}
+			
+			.msg-line {
+				display: block;
+				margin: .3rem 0 0 3.5rem;
+			}
+			
+			.about-msg{
+				padding-left: 1rem;
+			}
+			/**/
+			
+			.mui-table-view:before,
+			.mui-table-view:after,
+			.mui-table-view-cell:after {
+				height: 0 !important;
+			}
+			
+			footer {
+				position: absolute;
+				bottom: 1rem;
+				width: 100%;
+				text-align: center;
+			}
+		</style>
+
+	</head>
+	<body id='app'>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">关于我们</h1>
+		</header>
+		
+		<div class='mui-content'>
+			<!--<div class="grayness"></div>-->
+			<div id='logo'>
+				<img src='logo_about.png'>
+				<p class="writing">
+					上海波导信息技术有限公司成立于2012年，注册资金1000万元，属于上市公司宁波波导股份有限公司（股票代码：600130）的全资子公司。公司坐落于上海市普陀区铁三角科技园，是一家集研发、运营、销售、服务综合一体的高科技信息技术公司。
+				</p>
+			</div>
+			<div class="about-msg">
+				<ul class="mui-table-view">
+			         <li class="mui-table-view-cell">
+			         	电话：021-52662316 021-52660697 021-62160583
+			         </li>
+			         <li class="mui-table-view-cell">
+			         	 网址：www.birdsh.com
+			         </li>
+			         <li class="mui-table-view-cell">
+			         	 邮箱：fanrong@birdsh.com
+			         </li>
+				</ul>
+			</div>
+			<footer>©上海波导信息技术有限公司</footer>
+		</div>
+		<script src="../lib/mui.js"></script>
+	</body>
+</html>

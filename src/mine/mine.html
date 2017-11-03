@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../lib/mui.css">
+		<link rel="stylesheet" href="../common/common.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/icon.css">
+		<link rel="stylesheet" href="mine.css">
+		<script src="../../lib/mui.js"></script>
+		<script src="../../lib/vue.js"></script>
+		<link rel="stylesheet" href="../../lib/css/iconfont.css">
+		<style>
+			.mui-table-view:before{
+				background-color:transparent;
+			}
+			.mui-table-view:after{
+				background-color:transparent;
+			}
+			.mui-table-view-cell:after{
+				background-color:transparent;
+			}
+			.mui-table-view .mui-media-object{
+				line-height:58px;
+				width:58px;
+				height:58px;
+				border-radius:50%;
+			}
+			.mui-bar-nav{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-bar{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-table-view-chevron .mui-table-view-cell{
+				padding-right:40px;
+			}
+			.mui-table-view-chevron .mui-table-view-cell>a:not(.mui-btn){
+				margin-right:-40px;
+			}
+			.mui-grid-view.mui-grid-9{
+				background-color:#ffffff;
+			}
+			.mui-grid-view.mui-grid-9 .mui-media{
+				color:#8f8f94;
+			}
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				border-right:none;
+				border-bottom:none;
+			}
+			.mui-badge-danger, .mui-badge-red{
+				background-color:#ffffff;
+				color:#8f8f94;
+			}
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+				font-size:12px;;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="mui-content">
+		<ul class="mui-table-view" style="margin-top:0;">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg">
+					<div class="mui-media-body" style="margin-top:7px;font-size:14px;">
+						<span style="float:left;">手指在跳舞</span>
+						<span style="float:right;font-size: 21px;">0.00</span>
+					    <div style="clear:both;"></div>
+						<p class='mui-ellipsis' style="float:right;margin-top:7px;">可用返利(元) ></p>
+					</div>
+				</a>
+			</li>
+		</ul>
+        <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+                    <span style="color:red;">0</span>
+                    <div class="mui-media-body">累计收益(元)</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+                    <span style="color:red;">0</span>
+                    <div class="mui-media-body">待返利(元)</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+                    <span style="color:red;">0</span>
+                    <div class="mui-media-body">我的积分(个)</div></a></li>
+        </ul> 
+		<ul class="mui-table-view" style="margin-top:10px;">
+		    <li class="mui-table-view-cell">
+	            <a class="mui-navigate-right">
+	                <span class="mui-badge mui-badge-danger">查看全部</span>
+	                我的订单
+	            </a>
+	        </li>
+       </ul>
+        <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-jilu"></span>
+                    <div class="mui-media-body">全部</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-jindu"></span>
+                    <div class="mui-media-body">待返</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-2301"></span>
+                    <div class="mui-media-body">已返</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-tuikuan"></span>
+                    <div class="mui-media-body">退款</div></a></li>
+        </ul> 
+		<ul class="mui-table-view" style="margin-top:10px;">
+		    <li class="mui-table-view-cell">
+	            <a class="mui-navigate-right">
+	                <span class="mui-badge mui-badge-danger">享最高80%奖励</span>
+	                成为代言人
+	            </a>
+	        </li>
+       </ul>
+        <ul class="mui-table-view mui-grid-view mui-grid-9" style="margin-top:10px;">
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-mingxi" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">账户明细</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-hongbaojilu" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">红包记录</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-jifenduihuan" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">积分兑换</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-document" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">晒单</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-gouwuche" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">淘宝购物车</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon iconfont icon-piliangqunfa" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">批量发群</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-help" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">帮助中心</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-gear" style="color:#FF5E52;"></span>
+                    <div class="mui-media-body">设置</div></a></li>
+        </ul> 
+	</div>
+ </body>
+</html>

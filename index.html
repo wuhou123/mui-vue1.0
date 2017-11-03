@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title>启动页</title>
+		<link rel="stylesheet" href="./lib/mui.css" />
+		<script src="./lib/mui.js"></script>
+		<script src='lib/raven.min.js'></script>
+		<script src="special/special.js"></script>
+	</head>
+	<body>
+		<script>
+			//localStorage.token = 'fYfzJxw-sOZa8EU_weZ9-19Fzo_E5t4ox-EmE7qhZMa6fnWpa-O1qMsUlPhCGHb0-AV47wXdPaC64Y-8WSv4PdUecJ50YgDpy3IQGNvUPaBJEXJHzVHk2ix0bJLjcXmDL8RsjVGG7rEk1rDCphdLnGBJWKwITl03gIkz11r7Pf3VK09MkXxndwGrNs25L0sQ16NVanlZJz6UXOolmafYmR-4EEhcTCkPY5xHAyIYYVi_mTQD2Vca0o2rKd9EyO873OH6DsBJh2dJw0a193BMOyzR79Xpp4K7lpMv2myTPdzXAaO2';
+			//localStorage.removeItem('token');
+			Raven.config('https://8e17a7c1ccb44b50991a96e8f56eb8e3@sentry.io/158100').install();
+			//获取状态栏高度
+			var immersed = 0;
+			var ms = (/Html5Plus\/.+\s\(.*(Immersed\/(\d+\.?\d*).*)\)/gi).exec(navigator.userAgent);
+			if(ms && ms.length >= 3) { // 当前环境为沉浸式状态栏模式
+				immersed = parseFloat(ms[2]); // 获取状态栏的高度
+			}
+			localStorage.immersed = immersed;
+			
+			var pageConfig = {
+				'browser_main': {
+					'id': 'browser_main',
+					'url': 'build/browser/browser.html',
+					'styles': {
+						'popGesture': 'hide'
+					},
+					'subpages': [{
+						'id': 'browser',
+						'url': '',
+						'styles': {
+							'top': immersed+'px',
+							'bottom': '44px'
+						}
+					}],
+					waiting: {
+						autoShow: false,
+					}
+				},
+				'main': {
+					url: 'build/main/main.html',
+					id: 'main',
+					styles: {
+						'popGesture': 'none',
+						'hardwareAccelerated': true
+					},
+					waiting: {
+						autoShow: false,
+					}
+				},
+			};
+			mui.init({
+				preloadPages: [pageConfig['browser_main']] //预加载内置浏览器
+			});
+			mui.plusReady(function() {
+				plus.runtime.getProperty(plus.runtime.appid, function(wgtinfo) {
+					localStorage.version = wgtinfo.version;
+				});
+				//无网络提示
+				document.addEventListener('netchange', function() {
+					var nt = plus.networkinfo.getCurrentType();
+					switch(nt) {
+						case plus.networkinfo.CONNECTION_ETHERNET:
+						case plus.networkinfo.CONNECTION_WIFI:
+						case plus.networkinfo.CONNECTION_CELL2G:
+						case plus.networkinfo.CONNECTION_CELL3G:
+						case plus.networkinfo.CONNECTION_CELL4G:
+							break;
+						default:
+							mui.alert('当前无网络连接，您将无法收到推送告警', '警告', '我知道了');
+							break;
+					}
+				}, false);
+					mui.openWindow(pageConfig['main']);					
+
+			});
+		</script>
+	</body>
+
+</html>

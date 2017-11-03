@@ -1,0 +1,368 @@
+.mui-content,
+body,
+html {
+	height: 100%!important
+}
+
+body {
+	background: #fff;
+	margin: 0 auto
+}
+
+.iconColor {
+	color: #FF5E52
+}
+
+.mui-table-view .mui-media-object {
+	line-height: 122px;
+	max-width: 122px;
+	height: 122px;
+}
+
+.mui-bar~.mui-content .mui-fullscreen {
+	top: 44px;
+	height: auto;
+}
+
+.mui-pull-top-tips {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	margin-left: -25px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	z-index: 1;
+}
+
+.mui-bar~.mui-pull-top-tips {
+	top: 24px;
+}
+
+.mui-pull-top-wrapper {
+	width: 42px;
+	height: 42px;
+	display: block;
+	text-align: center;
+	background-color: #efeff4;
+	border: 1px solid #ddd;
+	border-radius: 25px;
+	background-clip: padding-box;
+	box-shadow: 0 4px 10px #bbb;
+	overflow: hidden;
+}
+
+.mui-pull-top-tips.mui-transitioning {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+
+.mui-pull-top-tips .mui-pull-loading {
+	/*-webkit-backface-visibility: hidden;
+				-webkit-transition-duration: 400ms;
+				transition-duration: 400ms;*/
+	margin: 0;
+}
+
+.mui-pull-top-wrapper .mui-icon,
+.mui-pull-top-wrapper .mui-spinner {
+	margin-top: 7px;
+}
+
+.mui-pull-top-wrapper .mui-icon.mui-reverse {
+	/*-webkit-transform: rotate(180deg) translateZ(0);*/
+}
+
+.mui-pull-bottom-tips {
+	text-align: center;
+	background-color: #efeff4;
+	font-size: 15px;
+	line-height: 40px;
+	color: #777;
+}
+
+.mui-pull-top-canvas {
+	overflow: hidden;
+	background-color: #fafafa;
+	border-radius: 40px;
+	box-shadow: 0 4px 10px #bbb;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.mui-pull-top-canvas canvas {
+	width: 40px;
+}
+
+.mui-slider-indicator.mui-segmented-control {
+	background-color: #efeff4;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item>a:not(.mui-control-item) {
+	display: inline;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+	border-top: none;
+	border-bottom: none
+}
+
+.mui-slider .mui-slider-group .mui-slider-item img {
+	width: 100%;
+	height: 125px;
+}
+
+.mui-slider-indicator .mui-indicator {
+	width: 10px;
+	height: 2px;
+	border-radius: 0;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.mui-slider-indicator .mui-active.mui-indicator {
+	background: #FF5E52;
+}
+
+.muiTab {
+	height:auto
+}
+
+.muiTab .mui-table-view {
+	height: 100%
+}
+
+.muiLi {
+	width: calc(50% - 2px);
+	border: 1px solid #e8e8e8;
+	display: inline-block;
+}
+
+.muiLi:nth-child(2n) {
+	margin-left: 4px
+}
+
+.mui-table-view-cell:after {
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.muiBadge {
+	position:absolute;
+	border-radius: 5px
+}
+
+.fontR {
+	color: #FF5E52;
+	font-size: 15px
+}
+
+.fontCard {
+	color: #c1bcbc;
+	font-size: 12px
+}
+
+.fontToday {
+	color: #FF5E52;
+	font-size: 15px;
+	margin: 10px;
+	margin-bottom: -10px
+}
+
+.fontTime {
+	color: 333;
+	font-size: 10px
+}
+
+.fontPro {
+	font-size: 10px;
+	color: #FF5E52;
+	float: right;
+	margin-right: 10px;
+}
+
+.muiMargin {
+	margin-top: 24px
+}
+
+.muiIput input[type='search'] {
+	width: calc(100% - 40px);
+	margin: 5px;
+	height: 24px;
+	font-size: 12px;
+	border-radius: 12px;
+	background-color: rgba(78, 65, 65, 0.1);
+}
+
+.mui-search .mui-placeholder {
+	text-align: left;
+	font-size: 12px;
+	line-height: 12px
+}
+
+.mui-icon-search:before {
+	font-size: 14px
+}
+
+.mui-search .mui-placeholder {
+	top: 6px;
+	right: 0;
+	bottom: 0;
+	left: 8px;
+}
+
+
+/*图标*/
+
+.shopping .icon-shangchangtubiao-6 {
+	font-size: 24px
+}
+
+.shopping {
+	position: absolute;
+	top: 6px;
+	right: 6px
+}
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+	font-size: 10px
+}
+
+.pageTwo {
+text-indent:40px;
+overflow:hidden;
+text-overflow:ellipsis;
+display:-webkit-box;
+-webkit-box-orient:vertical;
+-webkit-line-clamp:2; 
+}
+.fontPro .icon-xiayibu{
+	margin-left:5px;
+	font-size: 12px;
+}
+.viewBody{
+	padding:11px 15px
+}
+.mui-badge{
+	padding:6px 6px
+}
+.getCard{
+	font-size:10px;
+	float:right;
+	padding:3px;
+	height:24px
+}
+#banner{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #fff no-repeat;
+    color: #111;
+    margin: 3px 0px -3px 0px;
+    border-bottom: 1px dashed #e8e8e8;
+}
+#myCanvas{
+	position:absolute;
+	top:0;
+	left:0
+}
+.icon-shangchangtubiao-{
+	color:#bfae25
+}
+.icon-shangchangtubiao-7{
+	color:#ec6b5d
+}
+.icon-shangchangtubiao-14{
+	color:#36a955
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object{
+	height:100px
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+	border-bottom:2px solid #fff
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+	color:#FF5E52;
+	border-bottom:2px solid #FF5E52
+}
+/*第二个样式*/
+.muiLi .mui-media-object {
+    line-height: 122px;
+    max-width: 100%;
+    height: 122px;
+}
+.mui-pull-bottom-wrapper{
+	display:none
+}
+#item1mobile .mui-pull-bottom-wrapper{
+	display:block
+}
+.mui-segmented-control.mui-segmented-control-inverted {
+    border: 0;
+    border-radius: 0;
+    width: calc(100% - 40px);
+}
+.checkHome{
+    width: 40px;
+    height: 38.5px;
+    line-height: 38.5px;
+    position: absolute;
+    top: 33.5px;
+    right: 0;
+    text-align:center;
+    background: #fff;
+    z-index: 2;
+    border-left: 1px dashed #f5efef;
+}
+.mui-slider-indicator.mui-segmented-control {
+    background-color: #fff;
+}
+.mui-segmented-control .mui-control-item {
+    line-height: 36px;
+}
+.hideMenus{
+	visibility:hidden;
+	width:100%;
+	height:auto;
+	position:absolute;
+	z-index:9;
+	background:rgba(255,255,255,1)
+}
+.hideMenus ul li{
+	float:left
+}
+.menuFont{
+    height: 25px;
+    line-height:22px;
+    text-align: center;
+    margin: 7px;
+    border-radius: 20px;
+    padding: 1px 10px;
+    border: 1px solid #d8d8d8;
+    color: #333;
+}
+.changeCheck{
+	color:#fff;
+	background:#FF5E52;
+	border:1px solid #FF5E52
+}
+.TabMargin{
+	margin-top:8px
+}
+/*菜单显示和隐藏过渡效果*/
+.menuShow{
+	visibility:visible;
+	height:117px;
+	opacity:1;
+	transition:all 0.5s
+}
+.menuHidden{
+	visibility:hidden;
+	height:0px;
+	opacity:0;
+	transition:all 0.5s
+}
+.mui-pull-bottom-pocket .mui-pull-loading {
+	background:#FF5E52
+}

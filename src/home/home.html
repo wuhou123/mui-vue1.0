@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../lib/mui.css">
+		<link rel="stylesheet" href="../../lib/css/iconfont.css">
+		<link rel="stylesheet" href="../common/common.css">
+		<link rel="stylesheet" href="./home.css">
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_270781_95fm97dd9wak0529.css">
+		<script src="../../lib/mui.js"></script>
+		<script src="../../lib/mui.pullToRefresh.js"></script>
+		<script src="../../lib/mui.pullToRefresh.material.js"></script>
+		<script src="../../lib/vue.js"></script>
+		<script src="../../lib/PhotoClip/jquery-3.1.0.min.js"></script>
+	</head>
+
+	<body id="app">
+		<div class="mui-content">
+			<div id="slider" class="mui-slider mui-fullscreen" @slide="changeTab">
+				<div class="mui-input-row mui-search muiIput">
+					<input type="search" class="mui-input-clear" placeholder="购物先搜劵，年省能过万" disabled>
+				</div>
+				<div class="shopping"><i class="iconfont icon-shangchangtubiao-6"></i></div>
+				<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<div class="mui-scroll" id="scrollM">
+						<template v-for="(index,nav) in menus">
+							<a class="mui-control-item getScrolls" :href="'#'+nav.nav" :class="{'mui-active':index==0}" @tap.native="alert(index,$event)">
+								<span class="getScroll">{{nav.name}}</span>
+							</a>
+						</template>						
+					</div>					
+				</div>
+				<div class="checkHome" @tap="showPopover">
+					<i class="iconfont" :class="classChange"></i>
+				</div>
+				<div class="hideMenus" :class="{menuShow:IsShow,menuHidden:!IsShow}">
+					<ul>
+					  <li v-for="(index,item) in menus" class="menuFont" :class="{changeCheck:index==setIndex}" @tap="setIdex(index)">{{item.name}}</li>
+					</ul>					
+				</div>
+				<div class="mui-slider-group muiMargin">
+					<template v-for="(index,item) in menus">
+					<div :id="item.nav" class="mui-slider-item mui-control-content" :class="{'mui-active':index==0}">
+						<div id="scroll1" class="mui-scroll-wrapper">
+							<div class="mui-scroll" v-if="index==0">
+								<!--精选内容-->
+								<div id="slider" class="mui-slider">
+									<div class="mui-slider-group mui-slider-loop">
+										<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+										<div class="mui-slider-item mui-slider-item-duplicate">
+											<a href="#">
+												<img src="../../images/yuantiao.jpg">
+											</a>
+										</div>
+										<!-- 轮播图 -->
+										<template v-for="item in items">
+											<div class="mui-slider-item">
+												<a :href="item.href">
+													<img :src="item.src">
+												</a>
+											</div>
+										</template>
+										<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+										<div class="mui-slider-item mui-slider-item-duplicate">
+											<a href="#">
+												<img src="../../images/shuijiao.jpg">
+											</a>
+										</div>
+									</div>
+									<div class="mui-slider-indicator">
+										<div class="mui-indicator" v-for="(index,item) in items" :class="{'mui-active ':index===0}"></div>
+									</div>
+								</div>
+								<ul class="mui-table-view mui-grid-view mui-grid-9" style="margin:5px 0px;background-color:#FFFFFF;">
+									<template v-for="(index,item) in navs">
+										<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 fenleilist" style="border-right:none;border-bottom:none;width:20%;padding:11px;font-size:12px;">
+											<a name="item.name" :href="item.href">
+												<span class="mui-icon iconfont iconColor" :class='item.icon'></span>
+												<div class="mui-media-body" style="font-size:12px;">{{item.name }}
+
+												</div>
+											</a>
+										</li>
+									</template>
+								</ul>
+								<div style="background:#fff;margin-bottom:-5px;z-index:2">
+									<span class="fontToday">今日必抢</span>
+									<span class="fontTime">每天9:00</span>
+									<span class="fontPro">爆款天天好货<i class="iconfont icon-xiayibu"></i></span>
+								</div>
+								<div class="mui-slider">
+									<div class="mui-slider-group mui-slider-loop">
+										<div class="mui-slider-item" v-for='(index,n) in 2'>
+											<ul class="mui-table-view mui-grid-view">
+												<li class="mui-table-view-cell mui-media mui-col-xs-4">
+													<a href="#"><img class="mui-media-object" src="../../images/cbd.jpg">
+														<div class="mui-media-body">Color of SIP CBD</div>
+														<div>
+														<span class="fontR">￥12</span>
+														<span class="fontCard">劵后价</span>
+														</div>
+													</a>
+												</li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-4">
+													<a href="#"><img class="mui-media-object" src="../../images/yuantiao.jpg">
+														<div class="mui-media-body">静静看这世界</div>
+														<div>
+														<span class="fontR">￥12</span>
+														<span class="fontCard">劵后价</span>
+														</div>														
+													</a>													
+												</li>
+												<li class="mui-table-view-cell mui-media mui-col-xs-4">
+													<a href="#"><img class="mui-media-object" src="../../images/yuantiao.jpg">
+														<div class="mui-media-body">静静看这世界</div>
+														<div>
+														<span class="fontR">￥12</span>
+														<span class="fontCard">劵后价</span>
+														</div>														
+													</a>
+												</li>
+											</ul>
+										</div>	
+									</div>
+								</div>								
+								<ul class="mui-table-view sub-table" style="background-color:transparent;">
+									<!--分类区域-->
+							    <ul class="mui-table-view mui-grid-view" style="margin-top:7px;background-color:#fff;padding:0 6px 2px 0;">
+							        <li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:7px 0 0 13px;">
+							            <a href="#">
+							                <img class="mui-media-object" style="border-radius:5px" src="../../images/ad1.jpg">
+							            </a>
+							        </li>
+							        <li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:7px 0 0 13px;">
+							            <a href="#">
+							                <img class="mui-media-object" style="border-radius:5px" src="../../images/ad2.jpg">
+							            </a>
+							        </li>
+							        <li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:7px 0 0 13px;">
+							            <a href="#">
+							                <img class="mui-media-object" style="border-radius:5px" src="../../images/ad3.jpg">
+							            </a>
+							        </li>
+							        <li class="mui-table-view-cell mui-media mui-col-xs-6" style="padding:7px 0 0 13px;">
+							            <a href="#">
+							                <img class="mui-media-object" style="border-radius:5px" src="../../images/ad4.jpg">
+							            </a>
+							        </li>							        
+							    </ul>
+							    <!--上新区域-->
+								<div id='banner'>
+									<span><i class="iconfont icon-shangchangtubiao-"></i>实时上新</span>
+									<span><i class="iconfont icon-shangchangtubiao-7"></i>独家优惠</span>
+									<span><i class="iconfont icon-shangchangtubiao-14"></i>全场包邮</span>
+									<canvas id="myCanvas" width='100%';height="100%"></canvas>
+								</div>									
+									<template v-for="data in item.contentData">
+										<li class="mui-media viewBody" style="margin:3px 0;background-color:#ffffff;">
+											<a href="javascript:;">
+												<img class="mui-media-object mui-pull-left" src="../../images/shuijiao.jpg" style="border-radius:4px;">
+												<div class="mui-media-body" style="font-size:14px;">
+													<span class="mui-badge mui-badge-danger muiBadge">天猫</span>
+													<p class="pageTwo">泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好</p>
+													<p style="margin-top:24px">
+											 		<span class='mui-ellipsis' style="font-size:12px;text-decoration:line-through;color:#888888">￥12</span>
+													<span class='mui-ellipsis' style="font-size:12px;margin:0 0 12px 10px;color:#888888">劵后价 <span style="font-size:14px;color:#FF5E52;">￥10</span></span>									
+													</p>							
+													<span class="mui-badge mui-badge-danger" style="float:left;">领劵立减100元</span>
+													<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined getCard">立即领取</button>
+												</div>
+											</a>
+										</li>
+									</template>
+								</ul>
+								<!--end-->
+							</div>
+							<div class="mui-scroll" v-if="index!=0">
+								<ul class="mui-table-view TabMargin">
+									<li class="viewBody mui-media muiLi" v-for="data in item.contentData">
+										<a href="javascript:;" class="">
+											<img class="mui-media-object muiListImg" src="../../images/shuijiao.jpg" style="border-radius:4px">
+											<div class="mui-media-body" style="font-size:14px">
+													<span class="mui-badge mui-badge-danger muiBadge">天猫</span>
+													<p class="pageTwo">泰国正品Sivanna思薇娜化妆套刷粉底初学者彩妆工具12件套套装的好</p>
+													<p style="margin-top:24px">
+											 		<span class='mui-ellipsis' style="font-size:12px;text-decoration:line-through;color:#888888">￥12</span>
+													<span class='mui-ellipsis' style="font-size:12px;margin:0 0 12px 10px;color:#888888">劵后价 <span style="font-size:14px;color:#FF5E52;">￥10</span></span>									
+													</p>							
+													<span class="mui-badge mui-badge-danger" style="float:left;">领劵立减100元</span>
+											</div>
+										</a>
+									</li>
+								</ul>								
+							</div>
+						</div>
+					</div>						
+					</template>
+				</div>
+			</div>
+		</div>
+		<script src="./home.js"></script>
+		<script src="../common/common.js"></script>
+	</body>
+</html>

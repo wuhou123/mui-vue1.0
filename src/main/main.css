@@ -1,0 +1,38 @@
+html, body{
+	height: 100%;
+}
+.mui-tab-item .iconfont{
+	display: block;
+    position: relative;
+    top: .3rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0 auto .15rem auto;
+    font-size: .9rem;
+}
+.mui-bar-nav~ .mui-content .mui-pull-top-pocket {
+	top: 30px;
+}
+header.mui-bar {
+	background-color: #40ace4 !important;
+	background-image: none !important;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.mui-content {
+	background-color: #40ace4;
+	height: 80%;
+}
+.mui-bar-tab {
+	background-color: #f5fafe;
+	border-top: 1px solid #e7eef4;
+}
+.mui-bar-tab .mui-tab-item {
+	color: #68a;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+	color: #ff5e52;
+}
+.iconfont.icon-Trafficcondition {
+	font-size: 1rem;
+}

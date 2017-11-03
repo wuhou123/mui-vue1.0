@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../lib/mui.css">
+		<link rel="stylesheet" href="../common/common.css">
+		<link rel="stylesheet" type="text/css" href="../../lib/icon.css">
+		<link rel="stylesheet" href="findCard.css">
+		<script src="../../lib/mui.js"></script>
+		<script src="../../lib/vue.js"></script>
+		<style>
+			body{
+				color:#555555;
+			}
+			.mui-table-view:before{
+				background-color:transparent;
+			}
+			.mui-table-view:after{
+				background-color:transparent;
+			}
+			.mui-table-view-cell:after{
+				background-color:transparent;
+			}
+			.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+				color:#FF5E52;
+			}
+			.mui-bar-nav{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-bar{
+				-webkit-box-shadow:none;
+				box-shadow:none;
+			}
+			.mui-fullscreen{
+				background-color:#ffffff;
+			}
+			.yinying{
+				-webkit-box-shadow:0 1px 6px #ccc;
+				box-shadow:0 1px 6px #ccc;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="mui-content">
+		<div id="slider" class="mui-slider mui-fullscreen">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted yinying">
+				<div class="mui-scroll">
+					<a class="mui-control-item mui-active" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+						综合
+					</a>
+					<a class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+						人气
+					</a>
+					<a class="mui-control-item" href="#item3mobile" data-wid="tab-top-subpage-3.html">
+						价格
+					</a>
+					<a class="mui-control-item" href="#item4mobile" data-wid="tab-top-subpage-4.html">
+						劵额
+					</a>
+					<a class="mui-control-item" href="#item5mobile" data-wid="tab-top-subpage-5.html">
+						销量
+					</a>
+					<!--<a class="mui-control-item" href="#item6mobile" data-wid="tab-top-subpage-6.html">
+						科技
+					</a>-->
+				</div>
+			</div>
+		</div>
+	</div>
+		<script>
+			mui.init();
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				document.getElementById("header").innerHTML = self.idd;
+				var currentId=plus.webview.currentWebview().id;
+				var group = new webviewGroup(currentId, {
+					items: [{
+						id: "tab-top-fenleilist-1.html",
+						url: "tab-top-fenleilist-1.html",
+						extras: {}
+					}, {
+						id: "tab-top-fenleilist-2.html",
+						url: "tab-top-fenleilist-2.html",
+						extras: {}
+					}, {
+						id: "tab-top-fenleilist-3.html",
+						url: "tab-top-fenleilist-3.html",
+						extras: {}
+					}, {
+						id: "tab-top-fenleilist-4.html",
+						url: "tab-top-fenleilist-4.html",
+						extras: {}
+					}, {
+						id: "tab-top-fenleilist-5.html",
+						url: "tab-top-fenleilist-5.html",
+						extras: {}
+					}],
+					onChange: function(obj) {
+						var c = document.querySelector(".mui-control-item.mui-active");
+						if(c) {
+							c.classList.remove("mui-active");
+						}
+						document.querySelector(".mui-scroll .mui-control-item:nth-child(" + (parseInt(obj.index) + 1) + ")").classList.add("mui-active");
+					}
+				});
+				//plus.nativeUI.closeWaiting();
+				mui(".mui-scroll").on("tap", ".mui-control-item", function(e) {
+					var wid = this.getAttribute("data-wid");
+					group.switchTab(wid);
+				});
+
+			});
+			mui.back = function() {
+				var _self = plus.webview.currentWebview();
+				_self.close("auto");
+			}
+		</script>
+	</body>
+</html>

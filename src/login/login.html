@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link rel="stylesheet" href="../../lib/mui.css" />
+		<link rel="stylesheet" href="../common/common.css" />
+		<link rel="stylesheet" href="login.css" />
+		<script src="../../lib/mui.js"></script>
+		<script src="../../lib/vue.js"></script>
+	</head>
+
+	<body id="app">
+		<div class="mui-content flip">
+			<script>
+				//防止某些情况出现广告图片
+				function getQueryString(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+					var r = window.location.search.substr(1).match(reg);
+					if (r != null) return unescape(r[2]); return null;
+				}
+				if (getQueryString('hideFlip'))
+					document.write('<div class="group theFlip">');
+				else
+					document.write('<div class="group" :class="{theFlip:showLogin}">');
+			</script>
+			<!--<div class="group" :class="{theFlip:showLogin}">-->
+				<div class="front">
+					<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" @tap="showLogin=true">跳过</button>
+					<!--广告图片-->
+					<img src="../../special/adv.jpg">
+				</div>
+				<div class="back">
+					<!--登录-->
+					<div class="login-logo">
+						<img src="../../special/login.png" />
+					</div>
+					<form class="mui-input-group">
+						<div class="mui-input-row login-input-row">
+							<label><span class="mui-icon mui-icon-person"></span></label>
+							<input type="text" class="mui-input-clear" placeholder="请输入手机号" maxlength="15" autocomplete="off" v-model="userName" v-el:username_input required>
+						</div>
+						<div class="mui-input-row login-input-row">
+							<label><span class="mui-icon mui-icon-locked"></span></label>
+							<input id='pw' type="password" maxlength="64" class="mui-input-clear" placeholder="请输入密码" autocomplete="off" v-model="password" v-el:password_input name="f_order" value="" required @keyup.enter='login'>
+						</div>
+					</form>
+					<div class="mui-content-padded">
+						<div class="checkbox-group">
+							<label class="switch-id">
+								<span></span>
+								<div class="mui-switch" @toggle="switchToggle($event)">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</label>
+						</div>
+						
+						<div class="mui-button-row">
+							<fast-button id="login-btn" :disabled="!canLogin" :tap="login">登 录</fast-button>
+						</div>
+						<div id='extra'>
+							<a @tap='openWindow({url: "../register/register.html", styles: {top: 0}})'>注册</a><a @tap="findPassword">忘记密码？</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='../../lib/raven.min.js'></script>
+		<script src="../common/common.js"></script>
+		<script src="login.js"></script>
+	</body>
+
+</html>
