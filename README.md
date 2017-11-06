@@ -5,7 +5,7 @@
 
 app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键打包成APP，也可以借助eclipse本地打包（本地打包是有添加Android sdk包的需求，这里没有介绍，只是简单构建使用，本地打包工程如需可以索取）。这些都是[dcloud](http://www.dcloud.io/index.html)提供一整套技术解决方案。
 
-**说明**编辑和项目开发借鉴了github上yujinjin/fans的项目，项目只是开始，后面再添加页面和后端接口
+**说明:** 编辑和项目开发借鉴了github上yujinjin/fans的项目，项目只是开始，后面再添加页面和后端接口
 
 > 1. 前端UI的部分使用mui框架
 > 
@@ -26,7 +26,42 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 ##### package.json内容如下
 
 ```
-
+{
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.4",
+    "gulp": "^3.9.1",
+    "gulp-changed": "^2.0.0",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.0.1",
+    "postcss-loader": "^2.0.6",
+    "pug-loader": "^2.3.0",
+    "stream-combiner2": "^1.1.1",
+    "stylus-loader": "^3.0.1",
+    "vinyl-named": "^1.1.0",
+    "vue-loader": "^12.2.1",
+    "vue-template-compiler": "^2.3.4",
+    "webpack": "^2.6.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "browserslist": [
+    "Android > 4.0",
+    "iOS > 7"
+  ],
+  "dependencies": {
+    "axios": "^0.16.2",
+    "vue": "^2.3.4"
+  }
+}
 
 ```
 
@@ -34,84 +69,26 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 
 ```
-|-- build                               // webapck打包后的文件目录
-|-- logo                                // 存放app的图表地址目录
+|-- build                                 // 编译后目录
+|   |-- page.html                      // 编译app的html模板页面
+|   |-- page.css                      // 编译app的css
+|   |-- page.js                      // 编译app的js
 |-- src                                 // 源码目录
-|   |-- components                      // 存放公共组件的目录
-|       |-- member-qrcode.vue           // 会员二维码公共组件
-|       |-- ...                         // 其他公共组件
-|   |-- css                             // 存放各种css文件目录
-|       |-- app.css                     // app的公用样式文件 
-|       |-- icons-extra.css             // icons的扩展字体样式 
-|       |-- mui.css                     // mui框架css
-|       |-- ...                         // 其他css
-|   |-- fonts                           // 存放各种fonts文件目录
-|       |-- ...                         // 其他fonts文件
-|   |-- imgs                            // 存放各种图片文件目录
-|       |-- test                        // 存放开发测试的图片文件目录
-|           |-- ...                     // 其他测试图片文件
-|       |-- ...                         // 其他图片文件
-|   |-- js                              // 存放各种js文件目录
-|       |-- components                  // 存放各种js组件的目录
-|           |-- app-routers.js          // 站点路由插件（只做路由的操作，不涉及实际的业务处理）
-|           |-- signalR.js              // signalR组件
-|           |-- ...                     // 其他JS组件
-|       |-- config                      // 存放打包各种环境的目录
-|           |-- DEV.js                  // DEV环境配置文件
-|           |-- GQC.js                  // GQC环境配置文件
-|           |-- PRD.js                  // PRD环境配置文件
-|           |-- ...                     // 其他环境配置文件
-|       |-- lib                         // 第三方JS lib目录
-|           |-- mui.js                  // mui插件
-|           |-- ...                     // 其他第三方JS插件
-|       |-- services                    // app自己的业务目录
-|           |-- global-service.js       // APP 全局业务逻辑方法，主要处理登录、登出的业务逻辑
-|       |-- store                       // vuex管理webApp的数据状态目录
-|           |-- index.js                // app数据管理入口文件
-|           |-- app-data.js             // app临时数据管理
-|           |-- app-event.js            // app事件管理
-|           |-- router-status.js        // app路由状态管理
-|       |-- utils                       // app的存放工具
-|           |-- directives.js           // vue 自定义指令文件
-|           |-- log.js                  // app log日志
-|           |-- update.js               // app在线更新
-|           |-- utils.js                // app站点页面表单验证框架工具类
-|           |-- ....                    // 其他工具JS文件
-|   		|-- app.js                      // app配置以及其他方法
-|   		|-- entrance.js                 // app程序入口文件，加载各种公共组件
-|   		|-- routers.js                  // vue的路由配置文件
-|   |-- json                      			// 测试的json数据存放目录
-|   |-- less                      			// 存放各种less文件的目录
-|   		|-- app.less                    // app基础样式，包含其他less文件的入口
-|   		|-- ...                         // 其他less样式文件
-|   |-- views                      			// 存放各种页面视图组件目录
-|   		|-- error                       // 存放错误视图组件目录
-|   				|-- 404.vue                 // 404页面视图
-|   		|-- users                      	// 存放用户的视图组件目录
-|   				|-- login.vue               // 登录页面
-|   				|-- user-center.vue         // 用户中心页面
-|   				|-- welcome.vue         		// 欢迎页面
-|   				|-- ...         		// 其他视图页面
-|   		|-- ...                     // 其他功能模块目录
-|   		|-- app.vue                     // app页面入口文件
-|   		|-- barcode.vue                 // barcode页面入口文件
-|   		|-- home.vue                    // app首页面
-|   |-- index.html                      // app的html模板页面
+|   |-- page.html                      // app的html页面
+|   |-- page.css                      // app的css
+|   |-- page.js                      // app的js
 |-- unpackage                           // app编译包目录
-|-- .babelrc                            // ES6语法编译配置
-|-- .editorconfig                       // 编辑器编码规范配置
-|-- .gitignore                          // git忽略文件
+|-- gulpfile.js                            // gulp配置
 |-- index.html                          // webapp的首页加载文件
 |-- manifest.json                       // 打包app的配置文件
 |-- package.json                        // 配置项目相关信息，通过执行 npm init 命令创建
-|-- webpack.config.js                   // webpack配置文件
 ```
 
 
 ## 运行程序
 
 项目地址：（`git clone`）
-```shell
+```
 git clone https://github.com/wuhou123/mui-vue.git
 ```
 通过`npm`安装本地服务第三方依赖模块(需要已安装[Node.js](https://nodejs.org/))
@@ -129,22 +106,8 @@ gulp dev
 ## 实现的功能
 - 用户登录
 - 首页
-    - 扫码核销
-    - 会员识别
-    - 消息中心
-    - 我的收益
-    - 营销（素材列表、分享集客）
-    - 集客排行榜
-- 我的集客
-    - 会员管理
-    - 集团集客排行榜
-    - 本院集客排行榜
-- 个人中心
-    - 员工信息
-    - 我的收益
-    - 密码修改
-    - 消息中心（收益变化 等）
-    - 用户注销
+    - 多tab页上拉刷新和加载，页面菜单切换
+- 其他单页面
 
 ## 最后
 - 如果喜欢一定要 star哈!!!（谢谢!!）
