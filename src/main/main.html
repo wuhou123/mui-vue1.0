@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -15,21 +14,17 @@
 	</head>
 
 	<body id="app">
-
 		<header class="mui-bar mui-bar-nav" v-show="activeTab.lastIndexOf('home.html')===-1" >
 			<!--<a class="mui-icon mui-icon-left-nav mui-pull-left" @tap="goHome()"></a>-->
 			<h1 class="mui-title" v-text='title'></h1>
 		</header>
-
 		<nav class="mui-bar mui-bar-tab">
 			<a v-for="item in tabbar" class="mui-tab-item" :class="{'mui-active': $index === initIndex}"  @touchstart="tab($index)"> <!--:href="item.url"-->
 				<span class="{{item.icon}}"></span>
 				<span class="mui-tab-label" v-text='item.title'></span>
 			</a>
 		</nav>
-
 		<div class="mui-content"></div>
-
 		<script src='../../lib/raven.min.js'></script>
 		<script src="../common/common.js"></script>
 		<script src="main.js"></script>
