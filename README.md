@@ -22,6 +22,12 @@ app打包技术是用[HBuilder IDE](http://www.dcloud.io/index.html)工具一键
 
 
 ## npm初始化
+
+##### package.json内容如下
+
+```
+
+
 ```
 
 ## 项目目录说明
