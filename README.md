@@ -1,5 +1,5 @@
 ## 前言
-基于mui+vue1.0的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接下载](http://fir.im/dmaw)。 
+基于mui+vue1.0的H5 APP项目,页面视图全部都是html5页，不是嵌入app原生页面，项目可以直接运行在PC上调试，也可以在hbuilder上真机调试，可以直接下载安装[点此链接二维码下载](http://fir.im/dmaw)。 
 
 目前还是采用vue1.0和gulp构建还处于页面优化阶段，后面再升级到vue2.x和webpack再重新配置
 
